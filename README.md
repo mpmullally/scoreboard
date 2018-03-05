@@ -1,0 +1,2 @@
+# scoreboard
+Python driven scoreboard
