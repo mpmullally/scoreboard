@@ -87,12 +87,12 @@ UP                      = 3
 LEFT                    = 4
 
 # Char LCD backpack GPIO numbers.
-LCD_BACKPACK_RS         = 26
-LCD_BACKPACK_EN         = 19
-LCD_BACKPACK_D4         = 13
-LCD_BACKPACK_D5         = 6
+LCD_BACKPACK_RS         = 1
+LCD_BACKPACK_EN         = 2
+LCD_BACKPACK_D4         = 3
+LCD_BACKPACK_D5         = 4
 LCD_BACKPACK_D6         = 5
-LCD_BACKPACK_D7         = 11
+LCD_BACKPACK_D7         = 6
 LCD_BACKPACK_LITE       = 7
 
 class Adafruit_CharLCD(object):
