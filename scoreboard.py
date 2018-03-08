@@ -6,7 +6,7 @@ while RedScore <= 5 and BlueScore <= 5:
     if RedScore == 5:
         print('RED WINS')
         sleep(2)
-        RedScore = BlueScore = 0 
+        RedScore = BlueScore = 0
         continue
     elif BlueScore == 5:
         print('BLUE WINS')
@@ -26,11 +26,11 @@ while RedScore <= 5 and BlueScore <= 5:
             print(RedScore)
         elif x == 'BLUERESET':
             BlueScore = 3
-            print(BlueScorecore)    
+            print(BlueScorecore)
         else:
             print('Bad Input')
-            
-            
+
+
 #import RPi.GPIO as GPIO
 
 #GPIO.setmode(GPIO.BCM)
