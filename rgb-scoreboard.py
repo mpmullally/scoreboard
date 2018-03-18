@@ -4,15 +4,15 @@ import time
 GPIO.setmode(GPIO.BCM)
 
 # Raspberry Pi pin configuration:
-lcd_rs        = 25
-lcd_en        = 24
-lcd_d4        = 23
-lcd_d5        = 17
-lcd_d6        = 18
-lcd_d7        = 22
-lcd_red   = 2
-lcd_green = 3
-lcd_blue  = 4
+lcd_rs        = 27
+lcd_en        = 22
+lcd_d4        = 25
+lcd_d5        = 24
+lcd_d6        = 23
+lcd_d7        = 18
+lcd_red   = 4
+lcd_green = 17
+lcd_blue  = 7
 
 # Define LCD column and row size for 16x2 LCD.
 lcd_columns = 16
@@ -49,22 +49,22 @@ while RedScore <= 5 and BlueScore <= 5:
             RedScore += 1
             lcd.clear()
             lcd.set_color(1.0, 0.0, 0.0)
-            lcd.message('Red: 'RedScore'  Blue:'BlueScore)
+            lcd.message('Red: '+RedScore+'  Blue:'+BlueScore)
         elif x == 'Blue':
             BlueScore += 1
             lcd.clear()
             lcd.set_color(0.0, 0.0, 1.0)
-            lcd.message('Red: 'RedScore'  Blue:'BlueScore)
+            lcd.message('Red: '+RedScore+'  Blue:'+BlueScore)
         elif x == 'REDRESET':
             RedScore = 3
             lcd.clear()
             lcd.set_color(1.0, 1.0, 1.0)
-            lcd.message('Red: 'RedScore'  Blue:'BlueScore)
+            lcd.message('Red: '+RedScore+'  Blue:'+BlueScore)
         elif x == 'BLUERESET':
             BlueScore = 3
             lcd.clear()
             lcd.set_color(1.0, 1.0, 1.0)
-            lcd.message('Red: 'RedScore'  Blue:'BlueScore)
+            lcd.message('Red: '+RedScore+'  Blue:'+BlueScore)
         else:
             lcd.clear()
             lcd.set_color(1.0, 1.0, 1.0)
