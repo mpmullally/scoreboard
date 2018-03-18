@@ -1,4 +1,7 @@
 from Adafruit_CharLCD import Adafruit_CharLCD
+import RPi.GPIO as GPIO
+import time
+GPIO.setmode(GPIO.BCM)
 
 # Raspberry Pi pin configuration:
 lcd_rs        = 25
@@ -7,9 +10,9 @@ lcd_d4        = 23
 lcd_d5        = 17
 lcd_d6        = 18
 lcd_d7        = 22
-lcd_red   = 4
-lcd_green = 17
-lcd_blue  = 7
+lcd_red   = 2
+lcd_green = 3
+lcd_blue  = 4
 
 # Define LCD column and row size for 16x2 LCD.
 lcd_columns = 16
