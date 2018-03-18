@@ -1,5 +1,6 @@
 from Adafruit_CharLCD import Adafruit_CharLCD
 import RPi.GPIO as GPIO
+import time
 GPIO.setmode(GPIO.BCM)
 
 # Raspberry Pi pin configuration:
