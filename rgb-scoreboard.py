@@ -1,4 +1,4 @@
-from Adafruit_CharLCD import Adafruit_CharLCD
+from Adafruit_CharLCD import Adafruit_CharLCD as LCD
 import RPi.GPIO as GPIO
 import time
 GPIO.setmode(GPIO.BCM)
