@@ -44,7 +44,7 @@ while RedScore <= 5 and BlueScore <= 5:
         continue
     else:
         lcd.set_color(0.0, 1.0, 0.0)
-        x = input("Who Scored? ")
+        x = raw_input("Who Scored? ")
         if x == 'Red':
             RedScore += 1
             lcd.clear()
