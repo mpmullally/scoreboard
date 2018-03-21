@@ -83,6 +83,8 @@ GPIO.add_event_detect(13, GPIO.FALLING, callback=resetbutton, bouncetime=300)
 GPIO.add_event_detect(19, GPIO.FALLING, callback=redresetbutton, bouncetime=300)
 GPIO.add_event_detect(26, GPIO.FALLING, callback=redbutton, bouncetime=300)
 
+RedScore = 0
+BlueScore = 0
 while RedScore <= 21 and BlueScore <= 21:
     if RedScore == 21:
         lcd.clear()
