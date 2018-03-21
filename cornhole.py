@@ -26,8 +26,8 @@ lcd.set_color(0.0,0.0,0.0)
 
 GPIO.setmode(GPIO.BCM)
 
-bluebutton = 05
-blueresetbutton = 06
+bluebutton = 5
+blueresetbutton = 6
 resetbutton = 13
 redresetbutton = 19
 redbutton = 26
@@ -77,8 +77,8 @@ def redbutton(channel):
     lcd.set_color(1.0, 0.0, 0.0)
     lcd.message('Red: '+str(RedScore)+'  Blue:'+str(BlueScore))
 
-GPIO.add_event_detect(05, GPIO.FALLING, callback=bluebutton, bouncetime=300)
-GPIO.add_event_detect(06, GPIO.FALLING, callback=blueresetbutton, bouncetime=300)
+GPIO.add_event_detect(5, GPIO.FALLING, callback=bluebutton, bouncetime=300)
+GPIO.add_event_detect(6, GPIO.FALLING, callback=blueresetbutton, bouncetime=300)
 GPIO.add_event_detect(13, GPIO.FALLING, callback=resetbutton, bouncetime=300)
 GPIO.add_event_detect(19, GPIO.FALLING, callback=redresetbutton, bouncetime=300)
 GPIO.add_event_detect(26, GPIO.FALLING, callback=redbutton, bouncetime=300)
