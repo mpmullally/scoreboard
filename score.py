@@ -45,14 +45,14 @@ def bluebutton(channel):
     global BlueScore
     BlueScore = BlueScore + 1
     lcd.clear()
-    lcd.set_color(1.0, 0.0, 0.0)
+    lcd.set_color(0.0, 0.0, 1.0)
     lcd.message('Red: '+str(RedScore)+'  Blue:'+str(BlueScore))
 
 def blueresetbutton(channel):
     global BlueScore
     BlueScore = 11
     lcd.clear()
-    lcd.set_color(1.0, 0.0, 0.0)
+    lcd.set_color(0.0, 0.0, 1.0)
     lcd.message('Red: '+str(RedScore)+'  Blue:'+str(BlueScore))
 
 def resetbutton(channel):
