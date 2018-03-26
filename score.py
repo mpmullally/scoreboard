@@ -47,6 +47,7 @@ def bluebutton(channel):
     lcd.clear()
     lcd.set_color(0.0, 0.0, 1.0)
     lcd.message('Red: '+str(RedScore)+'  Blue:'+str(BlueScore))
+    sleep(2)
 
 def blueresetbutton(channel):
     global BlueScore
@@ -54,6 +55,7 @@ def blueresetbutton(channel):
     lcd.clear()
     lcd.set_color(0.0, 0.0, 1.0)
     lcd.message('Red: '+str(RedScore)+'  Blue:'+str(BlueScore))
+    sleep(2)
 
 def resetbutton(channel):
     global RedScore
@@ -62,6 +64,7 @@ def resetbutton(channel):
     lcd.clear()
     lcd.set_color(1.0, 1.0, 0.0)
     lcd.message('NEW GAME!!!\nRed: '+str(RedScore)+'  Blue:'+str(BlueScore))
+    sleep(2)
 
 def redresetbutton(channel):
     global RedScore
@@ -69,6 +72,7 @@ def redresetbutton(channel):
     lcd.clear()
     lcd.set_color(1.0, 0.0, 0.0)
     lcd.message('Red: '+str(RedScore)+'  Blue:'+str(BlueScore))
+    sleep(2)
 
 def redbutton(channel):
     global RedScore
@@ -76,6 +80,7 @@ def redbutton(channel):
     lcd.clear()
     lcd.set_color(1.0, 0.0, 0.0)
     lcd.message('Red: '+str(RedScore)+'  Blue:'+str(BlueScore))
+    sleep(2)
 
 GPIO.add_event_detect(5, GPIO.FALLING, callback=bluebutton, bouncetime=300)
 GPIO.add_event_detect(6, GPIO.FALLING, callback=blueresetbutton, bouncetime=300)
@@ -95,6 +100,7 @@ while RedScore <= 21 and BlueScore <= 21:
         lcd.clear()
         lcd.set_color(1.0, 1.0, 0.0)
         lcd.message('NEW GAME!!!\nRed: '+str(RedScore)+'  Blue:'+str(BlueScore))
+        sleep(2)
         continue
     elif BlueScore == 21:
         lcd.clear()
@@ -105,6 +111,10 @@ while RedScore <= 21 and BlueScore <= 21:
         lcd.clear()
         lcd.set_color(1.0, 1.0, 0.0)
         lcd.message('NEW GAME!!!\nRed: '+str(RedScore)+'  Blue:'+str(BlueScore))
+        sleep(2)
         continue
     else:
+        lcd.clear()
+        lcd.set_color(1.0, 1.0, 0.0)
+        lcd.message('Red: '+str(RedScore)+'  Blue:'+str(BlueScore))
         sleep(1)
