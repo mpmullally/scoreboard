@@ -2,6 +2,7 @@ import RPi.GPIO as GPIO
 import time
 from time import sleep
 import Adafruit_CharLCD as LCD
+import os
 
 # Raspberry Pi configuration:
 lcd_rs = 27  # Change this to pin 21 on older revision Raspberry Pi's
@@ -31,6 +32,7 @@ blueresetbutton = 6
 resetbutton = 13
 redresetbutton = 19
 redbutton = 26
+power = 29
 
 global BlueScore
 global RedScore
@@ -40,6 +42,7 @@ GPIO.setup(blueresetbutton, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 GPIO.setup(resetbutton, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 GPIO.setup(redresetbutton, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 GPIO.setup(redbutton, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+GPIO.setup(power, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
 def bluebutton(channel):
     global BlueScore
@@ -82,11 +85,15 @@ def redbutton(channel):
     lcd.message('Red: '+str(RedScore)+'  Blue:'+str(BlueScore))
     sleep(2)
 
+def poweroff(channel):
+    os.system("sudo poweroff")
+    
 GPIO.add_event_detect(5, GPIO.FALLING, callback=bluebutton, bouncetime=300)
 GPIO.add_event_detect(6, GPIO.FALLING, callback=blueresetbutton, bouncetime=300)
 GPIO.add_event_detect(13, GPIO.FALLING, callback=resetbutton, bouncetime=300)
 GPIO.add_event_detect(19, GPIO.FALLING, callback=redresetbutton, bouncetime=300)
 GPIO.add_event_detect(26, GPIO.FALLING, callback=redbutton, bouncetime=300)
+GPIO.add_event_detect(29, GPIO.FALLING, callback=poweroff, bouncetime=300)
 
 RedScore = 0
 BlueScore = 0
